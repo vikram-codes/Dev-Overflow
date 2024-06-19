@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-
+import { themes } from "@/constants";
 import { useTheme } from "@/context/ThemeProvider";
 
 import {
@@ -42,9 +42,25 @@ export default function Theme() {
             )}
           </MenubarTrigger>
           <MenubarContent className="absolute right-[-3rem] mt-3 min-w-[120px] rounded border py-2 dark:border-dark-400 dark:bg-dark-300">
-            <MenubarItem>🌝 Light Theme</MenubarItem>
-            <MenubarItem>🌚 Dark Theme</MenubarItem>
-            <MenubarItem>🖥️ Device Theme</MenubarItem>
+            {themes.map((theme) => (
+              <MenubarItem
+                key={theme.value}
+                onClick={() => {}}
+                className="flex items-center gap-2 px-3 py-2 text-sm font-medium dark:text-dark-100"
+              >
+                <Image
+                  src={theme.icon}
+                  width={20}
+                  height={20}
+                  alt={theme.label}
+                />
+                <span
+                  className={`body-semibold text-light-500 ${mode === theme.value ? "text-primary-500" : "text-dark-100_light900"}`}
+                >
+                  {theme.label}
+                </span>
+              </MenubarItem>
+            ))}
           </MenubarContent>
         </MenubarMenu>
       </Menubar>
