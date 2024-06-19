@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Theme from "./Theme";
-import MolbileNav from "./MolbileNav";
+import MolbileNav from "./MobileNav";
 
 const Navbar = () => {
   return (
