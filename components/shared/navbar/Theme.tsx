@@ -22,7 +22,7 @@ export default function Theme() {
     <div>
       <Menubar className="relative border-none bg-transparent shadow-none">
         <MenubarMenu>
-          <MenubarTrigger>
+          <MenubarTrigger className="focus:bg-light-900 data-[state=open]:bg-light-900 dark:focus:bg-dark200 dark:data=[state=open]:bg-dark-200">
             {mode === "light" ? (
               <Image
                 src="/assets/icons/sun.svg"
@@ -41,15 +41,10 @@ export default function Theme() {
               />
             )}
           </MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>
-              New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-            </MenubarItem>
-            <MenubarItem>New Window</MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem>Share</MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem>Print</MenubarItem>
+          <MenubarContent className="absolute right-[-3rem] mt-3 min-w-[120px] rounded border py-2 dark:border-dark-400 dark:bg-dark-300">
+            <MenubarItem>🌝 Light Theme</MenubarItem>
+            <MenubarItem>🌚 Dark Theme</MenubarItem>
+            <MenubarItem>🖥️ Device Theme</MenubarItem>
           </MenubarContent>
         </MenubarMenu>
       </Menubar>
