@@ -9,11 +9,10 @@ import {
   MenubarContent,
   MenubarItem,
   MenubarMenu,
-  MenubarSeparator,
-  MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import Image from "next/image";
+import { validateHeaderName } from "http";
 
 export default function Theme() {
   const { mode, setMode } = useTheme();
@@ -45,8 +44,15 @@ export default function Theme() {
             {themes.map((theme) => (
               <MenubarItem
                 key={theme.value}
-                onClick={() => {}}
-                className="flex items-center gap-2 px-3 py-2 text-sm font-medium dark:text-dark-100"
+                onClick={() => {
+                  setMode(theme.value);
+                  if (theme.value !== "system") {
+                    localStorage.theme = theme.value;
+                  } else {
+                    localStorage.removeItem("theme");
+                  }
+                }}
+                className="flex items-center gap-4 px-2.5 py-2 "
               >
                 <Image
                   src={theme.icon}
