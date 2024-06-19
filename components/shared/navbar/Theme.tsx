@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import { useTheme } from "@/context/ThemeProvider";
@@ -15,5 +17,23 @@ import {
 export default function Theme() {
   const { mode, setMode } = useTheme();
 
-  return <div>Theme</div>;
+  return (
+    <div>
+      <Menubar>
+        <MenubarMenu>
+          <MenubarTrigger>File</MenubarTrigger>
+          <MenubarContent>
+            <MenubarItem>
+              New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+            </MenubarItem>
+            <MenubarItem>New Window</MenubarItem>
+            <MenubarSeparator />
+            <MenubarItem>Share</MenubarItem>
+            <MenubarSeparator />
+            <MenubarItem>Print</MenubarItem>
+          </MenubarContent>
+        </MenubarMenu>
+      </Menubar>
+    </div>
+  );
 }
