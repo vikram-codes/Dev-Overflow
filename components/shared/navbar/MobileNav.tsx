@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Sheet,
@@ -9,9 +10,32 @@ import Image from "next/image";
 import Link from "next/link";
 import { SignedOut } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
+import { sidebarLinks } from "@/constants";
+import { usePathname } from "next/navigation";
 
 const NavContent = () => {
-  return <h1>NavContent</h1>;
+  const pathname = usePathname();
+  return (
+    <h1>
+      <section className="flex h-full flex-col gap-6 pt-16">
+        {sidebarLinks.map((item) => {
+          const isActive = pathname;
+          return (
+            <SheetClose asChild key={item.route}>
+              <Link href={item.route} className="">
+                <Image
+                  src={item.imgURL}
+                  alt={item.label}
+                  width={20}
+                  height={20}
+                />
+              </Link>
+            </SheetClose>
+          );
+        })}
+      </section>
+    </h1>
+  );
 };
 
 export default function MobileNav() {
