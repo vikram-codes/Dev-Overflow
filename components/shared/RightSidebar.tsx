@@ -1,27 +1,97 @@
 "use client";
 
-import { sidebarLinks } from "@/constants";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Image from "next/image";
 import React from "react";
+import RenderTag from "./RenderTag";
 
 export default function RightSidebar() {
-  const pathname = usePathname();
+  const hotQuestions = [
+    {
+      _id: 1,
+      title: "How to use Next.js with Tailwind CSS?",
+    },
+    {
+      _id: 2,
+      title: "How to use React Query with Next.js?",
+    },
+    {
+      _id: 3,
+      title: "How to deploy a Next.js app to Vercel?",
+    },
+    {
+      _id: 4,
+      title: "What are the best practices for React component naming?",
+    },
+    {
+      _id: 5,
+      title: "How to optimize performance in a React app?",
+    },
+  ];
+
+  const popularTags = [
+    {
+      _id: 1,
+      name: "React",
+      totalQuestions: 10,
+    },
+    {
+      _id: 2,
+      name: "JavaScript",
+      totalQuestions: 8,
+    },
+    {
+      _id: 3,
+      name: "TypeScript",
+      totalQuestions: 6,
+    },
+    {
+      _id: 4,
+      name: "Next.js",
+      totalQuestions: 5,
+    },
+    {
+      _id: 5,
+      name: "CSS",
+      totalQuestions: 4,
+    },
+  ];
+
   return (
-    <section className="flex background-light900_dark200 light-border right-0 top-0 flex-col h-screen justify-between gap-5 pt-36 p-6 border-r overflow-y-auto sticky dark:shadow-none max-sm:hidden w-[360px] custom-scrollbar ">
+    <section className="flex background-light900_dark200 light-border right-0 top-0 flex-col h-screen  gap-5 pt-36 p-6 border-l overflow-y-auto sticky dark:shadow-none max-xl:hidden w-[360px] custom-scrollbar ">
       <div>
-        <h1 className="invert-colors text-dark300_light900 rounded-lg">
-          Top Questions
-        </h1>
-        <Link href="/ask-question" className="text-dark300_light900">
-          Questions
-        </Link>
+        <h3 className="h3-bold text-dark200_light900 mt-10">Top Questions</h3>
+        {hotQuestions.map((question, index) => (
+          <div key={index} className="flex flex-col gap-2 mt-4">
+            <Link
+              href={`/ask-question/${question._id}`}
+              className="text-dark300_light900 flex cursor-pointer items-center justify-between gap-7"
+            >
+              <p className="body-medium">{question.title}</p>
+              <Image
+                src="/assets/icons/chevron-right.svg"
+                alt="Chevron Right"
+                width={20}
+                height={20}
+                className="invert-colors"
+              />
+            </Link>
+          </div>
+        ))}
       </div>
-      <div className="">
-        <h1 className=" text-dark300_light900">Popular Tags</h1>
-        <Link href="/ask-question" className="text-dark300_light900">
-          Tags
-        </Link>
+      <div className="mt-16 text-dark200_light900">
+        <h3 className="h3-bold mt-10">Popular Tags</h3>
+        <div className="">
+          {popularTags.map((tag) => (
+            <RenderTag
+              key={tag._id}
+              _id={tag._id}
+              name={tag.name}
+              totalQuestions={tag.totalQuestions}
+              showCounts
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
