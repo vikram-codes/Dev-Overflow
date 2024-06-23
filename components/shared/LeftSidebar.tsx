@@ -27,7 +27,7 @@ export default function LeftSidebar() {
               } flex items-center justify-start gap-4 bg-transparent p-4`}
               key={item.route}
             >
-              <img
+              <Image
                 src={item.imgURL}
                 alt={item.label}
                 width={20}
