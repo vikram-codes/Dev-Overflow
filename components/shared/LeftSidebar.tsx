@@ -69,8 +69,8 @@ export default function LeftSidebar() {
                 height={20}
                 className="invert-colors lg:hidden"
               />
-              <span className="primary-text-gradient max-lg:hidden">
-                Sign Up
+              <span className="text-dark400_light900 max-lg:hidden">
+                Sign up
               </span>
             </Button>
           </Link>
