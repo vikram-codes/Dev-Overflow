@@ -88,7 +88,7 @@ export default function RightSidebar() {
               _id={tag._id}
               name={tag.name}
               totalQuestions={tag.totalQuestions}
-              showCounts
+              showCount
             />
           ))}
         </div>
