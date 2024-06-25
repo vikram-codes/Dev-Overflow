@@ -14,8 +14,14 @@ export default function Home() {
           </Button>
         </Link>
       </div>
-      <div className="mt-11 flex justify-between gap-5 max-sm:flex-col sm:items-center">
-        <LocalSearch placeholder="Search questions..." />
+      <div className="mt-11 flex justify-between gap-5 max-sm:flex-col sm:items-center flex-col">
+        <LocalSearch
+          route="/"
+          iconPosition="left"
+          placeholder="Search questions..."
+          imgSrc="/assets/icons/search.svg"
+          otherClasses="flex-1"
+        />
         <Filters />
       </div>
     </>
