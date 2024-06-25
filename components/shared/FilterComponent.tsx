@@ -9,9 +9,11 @@ import {
 
 interface Props {
   placeholder: string;
+  icon: string;
+  //   values: string[];
 }
 
-export default function Filters({ placeholder }: Props) {
+export default function Filters({ placeholder, icon }: Props) {
   return (
     <Select>
       <SelectTrigger className="w-[180px]">

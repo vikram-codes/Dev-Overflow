@@ -1,17 +1,11 @@
-import Filters from "@/components/shared/Filters";
+import FilterComponent from "@/components/shared/FilterComponent";
+import { HomePageFilters } from "@/components/shared/Filters";
 import LocalSearch from "@/components/shared/search/LocalSearch";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Home() {
-  const filters = [
-    { title: "Newest" },
-    { title: "Recommended" },
-    { title: "Frequent" },
-    { title: "Unanswered" },
-  ];
-
   return (
     <>
       <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
@@ -31,18 +25,18 @@ export default function Home() {
           otherClasses="flex-1"
         />
         <div className="flex max-md:hidden justify-between px-2 gap-7">
-          {filters.map((title) => (
+          {HomePageFilters.map((title) => (
             <Badge
-              key={title.title}
+              key={title.name}
               className="subtle-medium background-light800_dark300 text-light400_light500 justify-start rounded-md border-none px-6 py-3 uppercase"
             >
-              {title.title}
+              {title.name}
             </Badge>
           ))}
         </div>
 
         <div className="md:hidden">
-          <Filters placeholder="Select a Filter" />
+          <FilterComponent placeholder="Select a Filter" icon="" />
         </div>
       </div>
     </>
