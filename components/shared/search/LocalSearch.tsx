@@ -21,7 +21,7 @@ export default function LocalSearch({
 }: Props) {
   return (
     <div
-      className={`relative w-full min-h-[56px] grow items-center gap-4 rounded-[10px] px-4 background-light800_darkgradient max-md:w-[300px] max-md:ml-[-200px] max-sm:w-full ${otherClasses}`}
+      className={`background-light800_darkgradient flex min-h-[56px] grow items-center gap-4 rounded-[10px] px-4 ${otherClasses}`}
     >
       <div className="relative flex min-h-[56px] grow items-center gap-1 rounded-xl px-4">
         {iconPosition === "left" && (

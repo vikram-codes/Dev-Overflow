@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   Select,
@@ -27,7 +29,10 @@ export default function Filters({
   return (
     <div className={`relative ${otherClasses}`}>
       <Select>
-        <SelectTrigger className="w-[180px]">
+        <SelectTrigger
+          className={`${otherClasses}
+        body-regular light-border background-light800_dark300 text-dark500_light700 border px-5 py-2.5 `}
+        >
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
         <SelectContent>
