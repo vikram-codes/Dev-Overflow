@@ -8,10 +8,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { SelectGroup } from "@radix-ui/react-select";
 
 interface Props {
-  placeholder: string;
-  icon: string;
   otherClasses?: string;
   containerClasses?: string;
   filters: {
@@ -21,24 +20,34 @@ interface Props {
 }
 
 export default function Filters({
-  placeholder,
   filters,
   otherClasses,
   containerClasses,
 }: Props) {
   return (
-    <div className={`relative ${otherClasses}`}>
+    <div className={`relative ${containerClasses}`}>
       <Select>
         <SelectTrigger
           className={`${otherClasses}
         body-regular light-border background-light800_dark300 text-dark500_light700 border px-5 py-2.5 `}
         >
-          <SelectValue placeholder={placeholder} />
+          <div>
+            <SelectValue
+              placeholder="Select a Filter"
+              className="line-clamp-1 flex1 text-left"
+            />
+          </div>
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="light">Light</SelectItem>
-          {/* <SelectItem value="dark">Dark</SelectItem>
-        <SelectItem value="system">System</SelectItem> */}
+          <SelectGroup>
+            {filters.map((item) => {
+              return (
+                <SelectItem key={item.value} value={item.value}>
+                  {item.name}
+                </SelectItem>
+              );
+            })}
+          </SelectGroup>
         </SelectContent>
       </Select>
     </div>

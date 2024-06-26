@@ -1,9 +1,9 @@
 import Filter from "@/components/shared/Filter";
 import { HomePageFilters } from "@/constants/Filters";
 import LocalSearch from "@/components/shared/search/LocalSearch";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import HomeFilters from "@/components/home/HomeFilters";
 
 export default function Home() {
   return (
@@ -28,13 +28,12 @@ export default function Home() {
         />
 
         <Filter
-          placeholder="Select a Filter"
-          icon=""
           filters={HomePageFilters}
           otherClasses="min-h-[56px] sm:min-w-[170px]"
           containerClasses="hidden max-md:flex"
         />
       </div>
+      <HomeFilters />
     </>
   );
 }
