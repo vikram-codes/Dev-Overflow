@@ -1,5 +1,5 @@
-import FilterComponent from "@/components/shared/FilterComponent";
-import { HomePageFilters } from "@/components/shared/Filters";
+import Filter from "@/components/shared/Filter";
+import { HomePageFilters } from "@/constants/Filters";
 import LocalSearch from "@/components/shared/search/LocalSearch";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -36,7 +36,13 @@ export default function Home() {
         </div>
 
         <div className="md:hidden">
-          <FilterComponent placeholder="Select a Filter" icon="" />
+          <Filter
+            placeholder="Select a Filter"
+            icon=""
+            otherClasses="min-h-[56px] sm:min-w-[170px]"
+            containerClasses="hidden max-md:flex"
+            filters={HomePageFilters}
+          />
         </div>
       </div>
     </>
