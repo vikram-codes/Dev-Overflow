@@ -4,6 +4,7 @@ import LocalSearch from "@/components/shared/search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import HomeFilters from "@/components/home/HomeFilters";
+import QuestionCard from "./QuestionCard";
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
         />
       </div>
       <HomeFilters />
+      <QuestionCard />
     </>
   );
 }
