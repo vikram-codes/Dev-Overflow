@@ -16,29 +16,30 @@ const dummyQuestion: Question[] = [
   {
     question:
       "Best practices for data fetching in a Next.js application with Server-Side Rendering (SSR)?",
-    tags: ["react", "javascript", "webdev"],
+    tags: ["NEXT.js"],
     votes: 200,
     answers: 40,
     views: 390,
-    askedBy: "John Doe",
+    askedBy: "Sujata | JS Mastery",
     askedDate: "2021-10-10",
   },
   {
-    question: "What are the best practices for writing clean code?",
-    tags: ["programming", "clean code", "best practices"],
+    question: "Redux Toolkit Not Updating State as Expected",
+    tags: ["React.js", "Redux"],
     votes: 150,
     answers: 30,
     views: 250,
-    askedBy: "Jane Smith",
+    askedBy: "Sujata | JS Mastery",
     askedDate: "2021-10-15",
   },
   {
-    question: "How to handle asynchronous operations in JavaScript?",
-    tags: ["javascript", "async", "promises"],
+    question: "Async/Await Function Not Handling Errors Properly",
+    tags: ["javascript"],
     votes: 180,
     answers: 35,
     views: 300,
-    askedBy: "Bob Johnson",
+    askedBy: "Sujata | JS Mastery",
+
     askedDate: "2021-10-20",
   },
 ];
@@ -47,13 +48,13 @@ export default function QuestionCard() {
   return (
     <>
       {dummyQuestion.map((question) => (
-        <div className="background-light900_dark200 shadow-md p-7 pl-10 text-dark300_light700 mt-11 rounded-md">
+        <div className="background-light900_dark200 shadow-md p-6 pl-10 text-dark300_light700 mt-11 rounded-md">
           <div className="flex justify-between items-center">
-            <h3 className="h3-bold py-2 text-dark900_light300">
+            <h3 className="h3-bold py-1 text-dark900_light300 px-1">
               {question.question}
             </h3>
           </div>
-          <div className="flex items-center gap-2 my-2">
+          <div className="flex items-center gap-2 my-3">
             {question.tags.map((tag) => (
               <Badge className="subtle-medium background-light800_dark300 text-light400_light500 rounded-md border-none px-4 py-2 uppercase">
                 {tag}
@@ -72,11 +73,11 @@ export default function QuestionCard() {
               <span className="text-sm text-dark100_light700">
                 {question.askedBy}
               </span>
-              <span className="text-sm text-dark100_light700">
+              <span className="text-xs text-dark100_light700">
                 • asked {question.askedDate}
               </span>
             </div>
-            <div className="flex items-center gap-1 text-xs">
+            <div className="flex items-center gap-4 text-xs">
               <div className="flex items-center gap-1">
                 <img
                   src="/assets/icons/like.svg"
