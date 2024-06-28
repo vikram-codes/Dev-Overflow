@@ -96,6 +96,8 @@ export default function Home() {
           description=" Be the first to break the silence! 🚀 Ask a Question and kickstart the
         discussion. Our query could be the next big thing others leadn from. Get
         Involved! 💡"
+          link="/ask-question"
+          linkTitle="Ask a Question"
         />
         {/* )} */}
       </div>
