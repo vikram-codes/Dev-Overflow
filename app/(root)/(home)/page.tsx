@@ -76,7 +76,7 @@ export default function Home() {
       </div>
       <HomeFilters />
       <div className="mt-10 flex w-full flex-col gap-6">
-        {/* {questions?.length > 0 ? (
+        {questions?.length > 0 ? (
           questions?.map((question) => (
             <QuestionCard
               key={question._id}
@@ -90,16 +90,16 @@ export default function Home() {
               createdAt={question.createdAt}
             />
           ))
-        ) : ( */}
-        <NoResult
-          title="There's no question to show"
-          description=" Be the first to break the silence! 🚀 Ask a Question and kickstart the
+        ) : (
+          <NoResult
+            title="There's no question to show"
+            description=" Be the first to break the silence! 🚀 Ask a Question and kickstart the
         discussion. Our query could be the next big thing others leadn from. Get
         Involved! 💡"
-          link="/ask-question"
-          linkTitle="Ask a Question"
-        />
-        {/* )} */}
+            link="/ask-question"
+            linkTitle="Ask a Question"
+          />
+        )}
       </div>
       {/* <QuestionCard /> */}
     </>
