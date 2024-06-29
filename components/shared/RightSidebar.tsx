@@ -8,50 +8,50 @@ import RenderTag from "./RenderTag";
 export default function RightSidebar() {
   const hotQuestions = [
     {
-      _id: 1,
+      _id: "1",
       title: "How to use Next.js with Tailwind CSS?",
     },
     {
-      _id: 2,
+      _id: "2",
       title: "How to use React Query with Next.js?",
     },
     {
-      _id: 3,
+      _id: "3",
       title: "How to deploy a Next.js app to Vercel?",
     },
     {
-      _id: 4,
+      _id: "4",
       title: "What are the best practices for React component naming?",
     },
     {
-      _id: 5,
+      _id: "5",
       title: "How to optimize performance in a React app?",
     },
   ];
 
   const popularTags = [
     {
-      _id: 1,
+      _id: "1",
       name: "React",
       totalQuestions: 10,
     },
     {
-      _id: 2,
+      _id: "2",
       name: "JavaScript",
       totalQuestions: 8,
     },
     {
-      _id: 3,
+      _id: "3",
       name: "TypeScript",
       totalQuestions: 6,
     },
     {
-      _id: 4,
+      _id: "4",
       name: "Next.js",
       totalQuestions: 5,
     },
     {
-      _id: 5,
+      _id: "5",
       name: "CSS",
       totalQuestions: 4,
     },
