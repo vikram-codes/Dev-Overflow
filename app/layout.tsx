@@ -8,6 +8,12 @@ const inter = localFont({
   weight: "100 200 300 400 500 600 700 800 900",
 });
 
+const spaceGrotesk = localFont({
+  src: "./fonts/SpaceGroteskvf.ttf",
+  variable: "--font-space-grotesk",
+  weight: "300 400 500 600 700",
+});
+
 export const metadata: Metadata = {
   title: "Dev-Overflow",
   description: "Better version of StackOverflow",
@@ -20,7 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body
+        className={`${inter.className} ${spaceGrotesk.variable} antialiased`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
