@@ -1,7 +1,4 @@
-import NextAuth from "next-auth"
+export const runtime = "edge"; // ✅ Required for new next-auth setup
 
-const handler = NextAuth({
-  ...
-})
-
-export { handler as GET, handler as POST }
+import { handlers } from "@/auth";
+export const { GET, POST } = handlers;

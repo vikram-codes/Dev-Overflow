@@ -1,6 +1,16 @@
+// auth.ts
 import NextAuth from "next-auth";
-import Github from "next-auth/providers/github";
+import GitHub from "next-auth/providers/github";
 
-export const { handlers, signin, signOut, auth } = NextAuth({
-  providers: [Github],
+import { authConfig } from "./auth.config";
+
+export const { auth, handlers, signIn, signOut } = NextAuth({
+  ...authConfig,
+  providers: [
+    GitHub({
+      clientId: process.env.AUTH_GITHUB_ID!,
+      clientSecret: process.env.AUTH_GITHUB_SECRET!,
+    }),
+  ],
+  secret: process.env.AUTH_SECRET,
 });
